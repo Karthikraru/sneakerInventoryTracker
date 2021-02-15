@@ -6,9 +6,9 @@ from databases import Entry
 class addInventory(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        tk.Frame.columnconfigure(self, index=0, weight=0)
-        tk.Frame.columnconfigure(self, index=1, weight=0)
-        tk.Frame.columnconfigure(self, index=2, weight=0)
+        tk.Frame.columnconfigure(self, index=0, weight=1)
+        tk.Frame.columnconfigure(self, index=1, weight=1)
+        tk.Frame.columnconfigure(self, index=2, weight=1)
         tk.Frame.rowconfigure(self, index=0, weight=0)
         tk.Frame.rowconfigure(self, index=1, weight=0)
 

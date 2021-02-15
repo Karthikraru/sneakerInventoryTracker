@@ -4,7 +4,9 @@ import datetime
 from startPage import startPage
 from addInventory import addInventory
 from viewInventory import viewInventory
+from addCost import addCost
 from databases import init
+from viewCost import viewCost
 
 
 class Tracker(tk.Tk):
@@ -16,7 +18,7 @@ class Tracker(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F in {startPage, addInventory, viewInventory}:
+        for F in {startPage, addInventory, viewInventory, addCost, viewCost}:
             pageName = F.__name__
             frame = F(container, self)
             self.frames[pageName] = frame
