@@ -35,7 +35,7 @@ class viewInventory(tk.Frame):
         editButton = tk.Button(self.frame, image=self.edit, command=self.editPage)
         deleteButton = tk.Button(self.frame, image=self.delete, command=self.deletePage)
 
-        label.grid(row=0,column=0,columnspan=2,sticky='nsew', pady=10, padx=10)
+        label.grid(row=0,column=0,columnspan=2,sticky='ns', pady=10, padx=10)
         refreshButton.grid(row=0, column=2, pady=10, padx=10)
         editButton.grid(row=0, column=4, pady=10, padx=10)
         deleteButton.grid(row=0, column=5, pady=10, padx=10)
@@ -82,7 +82,7 @@ class viewInventory(tk.Frame):
         self.frame.rowconfigure(index=1, weight=0)
 
     def fillInventory(self):
-        entries = Entry.select().order_by(Entry.purchaseDate.desc())
+        entries = Entry.select().order_by(Entry.purchaseDate.asc())
         self.name.set("")
         self.size.set("")
         self.pCost.set("")
@@ -92,20 +92,20 @@ class viewInventory(tk.Frame):
         self.sLocation.set("")
         self.profit.set("")
         for entry in entries:
-            self.name.set("{}{}\n".format(self.name.get(), entry.name))
-            self.size.set("{}{}\n".format(self.size.get(), entry.size))
-            self.pCost.set("{}{}\n".format(self.pCost.get(), entry.purchaseCost))
-            self.pDate.set("{}{}\n".format(self.pDate.get(), entry.purchaseDate.strftime('%B %d, %Y')))
+            self.name.set("{}{}\n\n".format(self.name.get(), entry.name))
+            self.size.set("{}{}\n\n".format(self.size.get(), entry.size))
+            self.pCost.set("{}${}\n\n".format(self.pCost.get(), entry.purchaseCost))
+            self.pDate.set("{}{}\n\n".format(self.pDate.get(), entry.purchaseDate.strftime('%B %d, %Y')))
             if entry.soldCost == 0.0:
-                self.sPrice.set("{}\n".format(self.sPrice.get()))
+                self.sPrice.set("{}\n\n".format(self.sPrice.get()))
             else:
-                self.sPrice.set("{}{}\n".format(self.sPrice.get(), entry.soldCost))
+                self.sPrice.set("{}${}\n\n".format(self.sPrice.get(), entry.soldCost))
             if entry.soldDate.strftime('%B %d, %Y') == "January 01, 2000":
-                self.sDate.set("{}\n".format(self.sDate.get()))
+                self.sDate.set("{}\n\n".format(self.sDate.get()))
             else:
-                self.sDate.set("{}{}\n".format(self.sDate.get(), entry.soldDate.strftime('%B %d, %Y')))
-            self.sLocation.set("{}{}\n".format(self.sLocation.get(), entry.soldLocation))
-            self.profit.set("{}{}\n".format(self.profit.get(), (entry.soldCost-entry.purchaseCost)))
+                self.sDate.set("{}{}\n\n".format(self.sDate.get(), entry.soldDate.strftime('%B %d, %Y')))
+            self.sLocation.set("{}{}\n\n".format(self.sLocation.get(), entry.soldLocation))
+            self.profit.set("{}${}\n\n".format(self.profit.get(), int(entry.soldCost-entry.purchaseCost)))
 
     def editPage(self):
         self.editErrorLog.set("")
@@ -318,7 +318,7 @@ class viewInventory(tk.Frame):
         self.deleteErrorLog.set("Shoe not found")
 
     def buildEditErrorLog(self, *args):
-        log = tk.Label(self.editPage, background=self.color, foreground='white', text=self.editErrorLog.get(),font=30)
+        log = tk.Label(self.editPage, background=self.color, foreground='white', text=self.editErrorLog.get(), font=30)
         log.grid(row=3, rowspan=4, column=3, sticky='nsew', pady=10, padx=10)
 
     def buildDeleteErrorLog(self, *args):
