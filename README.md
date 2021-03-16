@@ -2,14 +2,15 @@
 ### A program which tracks your sneaker inventory and costs!
 ##Installation
 ```
-git install peewee
-git install tkinter
+pip install peewee
+pip install tkinter
+pip install matplotlib
 git clone https://github.com/Karthikraru/sneakerInventoryTracker.git
 ```
 ## Motivation
 #### This is a program I originally built for personal use. After using a google sheets file for almost a year, I decided to make a program which would simplify the process.
 ## Build status
-#### I have finished implementing the cost and inventory trackers, and am planning on working on a data analysis section.
+#### I have added all of my planned features. However, if you have any suggestions feel free to message me on discord KK#5836
 ## Features
 - Add inventory
 - Delete inventory
@@ -17,11 +18,10 @@ git clone https://github.com/Karthikraru/sneakerInventoryTracker.git
 - Add costs
 - Delete Costs
 - View Costs
-## Future Features
-- Inventory/cost analysis
+- Inventory Analysis
 ## Screenshots
 ### Home screen
-![Home Screen](https://user-images.githubusercontent.com/72110533/107896741-d0461580-6efc-11eb-80b5-5b1e73c0517c.png))
+![Home Screen](https://user-images.githubusercontent.com/72110533/107896741-d0461580-6efc-11eb-80b5-5b1e73c0517c.png)
 ### Add Inventory
 ![Add inventory](https://user-images.githubusercontent.com/72110533/107896742-d0461580-6efc-11eb-8f99-b362765efc10.png)
 ### View Inventory
