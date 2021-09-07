@@ -1,6 +1,6 @@
 # Sneaker Inventory Tracker
 ### A program which tracks your sneaker inventory and costs!
-##Installation
+## Installation
 ```
 pip install peewee
 pip install tkinter
