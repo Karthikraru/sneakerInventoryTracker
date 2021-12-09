@@ -10,7 +10,7 @@ git clone https://github.com/Karthikraru/sneakerInventoryTracker.git
 ## Motivation
 #### This is a program I originally built for personal use. After using a google sheets file for almost a year, I decided to make a program which would simplify the process.
 ## Build status
-#### I have added all of my planned features. However, if you have any suggestions feel free to message me on discord KK#5836
+#### I have added all of my planned features. However, if you have any suggestions feel free to message me on discord KK#5836.
 ## Features
 - Add inventory
 - Delete inventory
